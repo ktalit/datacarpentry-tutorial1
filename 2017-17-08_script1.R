@@ -55,6 +55,9 @@
  ##display count for month Jan and Feb---
  summary(surveys$month==1 | surveys$month==2)
  summary(surveys$month==2)
+ 
+ ##-----------------------------------
+ ##--Day2--
 
   
  
