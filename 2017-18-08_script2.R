@@ -28,6 +28,13 @@ survey_test<-surveys %>%
   filter(hindfoot_half<30) %>%
   filter(!is.na(hindfoot_half)) %>%
   select(species_id, hindfoot_half)
+
+#group by and summarize
+surveys %>%
+  filter(!is.na(weight), sex=='F' | sex=='M')%>%
+  group_by(sex, species_id) %>%
+  summarise(mean_weight=mean(weight, na.rm=TRUE),
+            min_weight = min(weight))
   
       
         
