@@ -15,4 +15,21 @@ filter(surveys,year==1995)
 survey_sml<-surveys %>%
   filter(year==1995) %>%
   select(year,plot_id,species_id,weight)
+
+surveys %>%
+  filter(!is.na(weight)) %>%
+  mutate(weight_kg=weight/1000, 
+         weight_kg2=weight_kg*2) %>%
+  tail
+
+survey_test<-surveys %>%
+ 
+  mutate(hindfoot_half=(hindfoot_length)/2) %>%
+  filter(hindfoot_half<30) %>%
+  filter(!is.na(hindfoot_half)) %>%
+  select(species_id, hindfoot_half)
+  
+      
+        
+    
   
