@@ -36,7 +36,29 @@ surveys %>%
   summarise(mean_weight=mean(weight, na.rm=TRUE),
             min_weight = min(weight))
   
-      
-        
+surveys %>%
+  group_by(sex) %>%
+  tally
+
+#challange1
+surveys %>%
+  group_by(plot_type) %>%
+  tally
+#challange2
+surveys %>%
+  filter(!is.na(hindfoot_length)) %>%
+        group_by(species_id) %>%
+      summarise(min_hl=min(hindfoot_length),max_hl=max(hindfoot_length))
     
+#challange3
+challange3<-surveys %>%
+  group_by(year) %>%
+  filter(weight == max(weight, na.rm=TRUE)) %>%
+  arrange(year) %>%
+select(year,genus,species_id,weight) 
+
+#challange4
+surveys %>%
+  group_by(sex) %>%
+  summarise(n())
   
