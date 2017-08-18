@@ -40,7 +40,7 @@
  summary(surveys$taxa)
  levels(surveys$taxa)
  nlevels(surveys$taxa)
- #hist(surveys$taxa) #error
+ 
  class(surveys$taxa) #turns it into a table
  class(table(surveys$taxa))
  barplot(table(surveys$taxa))
